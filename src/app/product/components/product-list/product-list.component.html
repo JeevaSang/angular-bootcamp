@@ -1,0 +1,49 @@
+<h2>Product List</h2>
+
+<p>Product List {{counter}}</p>
+
+<ul>
+  <li *ngFor="let n of counterList">
+    {{n}}
+  </li>
+</ul>
+<button (click)="incr()"> +1 </button>
+
+<button (click)="refresh()">
+  Refresh
+</button>
+
+<span *ngIf="message">
+  {{message}}
+</span>
+
+<span *ngIf="inProgress">
+  {{inProgress}}
+</span>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Year</th>
+    <th>Delete</th>
+  </tr>
+
+  <tr *ngFor="let product of products$ | async;trackBy:trackById">
+    <td>
+      <a [routerLink]="[ '/products', 'edit', product.id ]">
+        <!-- {{product.name}} -->
+
+        {{getProductName(product)}}
+      </a>
+
+    </td>
+    <td>{{product.price}}</td>
+    <td>{{product.year}}</td>
+    <td>
+      <button (click)="deleteProduct(product.id)">
+        Delete
+      </button>
+    </td>
+  </tr>
+</table>

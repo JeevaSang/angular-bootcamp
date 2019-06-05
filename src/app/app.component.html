@@ -1,0 +1,10 @@
+<div>
+    <!--{{expression}} - interpolation , data binding -->
+    <h1 appHighlight>{{appTitle}}</h1>
+    <app-header></app-header>
+
+    <!--step 3 : router view contaioner ,home/about html placed-->
+    <router-outlet></router-outlet>
+
+    <app-footer [company]="appTitle" year="2018" [address]="address" (contactEvent)="contactHandler($event)"></app-footer>
+</div>

@@ -1,0 +1,12 @@
+<div>
+  <a routerLink="/" class='button' [routerLinkActiveOptions]="{exact:true}" routerLinkActive="success">Home</a>
+  <a routerLink="/products" class='button' routerLinkActive="success"> products</a>
+  <a routerLink="/cart" class='button' routerLinkActive="success">cart</a>
+  <a routerLink="/about" class='button' routerLinkActive="success">About</a>
+  <a routerLink="/contact" class='button' routerLinkActive="success">Contact</a>
+  <span> Members : {{memberlegth}}</span>
+  <button (click)="empty()">
+    Remove Member
+  </button>
+  <hr />
+</div>

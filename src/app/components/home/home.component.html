@@ -1,0 +1,55 @@
+<h2>home page</h2>
+
+<!--
+  {{expr}} - interpolation,evaluate expression,tostrig()
+  [propertyName] = "expr" - property binding
+  (click) = "expr" - event binding
+-->
+<h4>Memberss!!!</h4>
+<ul>
+  <li *ngFor="let member of members$ | async">
+    {{member.name}}
+
+  </li>
+
+</ul>
+
+<p>Counter : {{counter}}</p>
+<p>Counter + 1 {{counter+1}}</p>
+<p>Date {{today_pipe}}</p>
+<p>Date pipe{{today_pipe}} | date</p>
+
+<p>Full Date {{today_pipe | date:'fullDate'}}</p>
+<p>Full Date {{today_pipe | date:'YYYY/MM/DD'}}</p>
+
+<p>Price {{price_pipe | currency}}</p>
+<p>Price {{price_pipe | currency:'INR'}}</p>
+<p>Price {{price_pipe | currency:'EUR'}}</p>
+
+<p>Power 2^3 {{2| power:3}}</p>
+<p>Power 5^1 {{5| power}}</p>
+<p>Power counter^2 {{counter| power:2}}</p>
+
+
+
+<input [value]="counter" />
+
+<input [value]="counter*2" />
+
+<p>
+  {{counter % 2 ==0 ? "Even":"Odd"}}
+</p>
+
+<button [disabled]="counter%2 == 0">
+  Test
+</button>
+
+<button (click)="increment()">
+  Incr
+</button>
+
+
+<button (click)="counter = counter -1">
+  Decr
+</button>
+<app-like></app-like>
